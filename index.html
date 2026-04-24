@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rafaela Nogueira — Especialista em Vendas & Head de Receita</title>
+  <meta name="description" content="Especialista em vendas, construção de times comerciais e funis de venda digital. Creator economy e mercado corporativo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #080808;
+      --bg2: #0d0d0d;
+      --bg3: #121212;
+      --border: rgba(255,255,255,0.06);
+      --border2: rgba(255,255,255,0.12);
+      --text: #e8e8e0;
+      --text2: #a0a090;
+      --text3: #666;
+      --accent: #c8b87a;
+      --accent2: rgba(200,184,122,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 24px 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(8,8,8,0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px; font-weight: 700;
+      color: var(--text); letter-spacing: 0.02em;
+    }
+    .nav-links { display: flex; gap: 36px; align-items: center; }
+    .nav-links a {
+      font-size: 12px; font-weight: 400; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text3);
+      text-decoration: none; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-wa {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 18px;
+      background: #25D366;
+      color: #fff !important;
+      font-size: 11px !important; font-weight: 600 !important;
+      letter-spacing: 0.08em !important;
+      text-transform: uppercase; text-decoration: none;
+      border-radius: 2px; transition: opacity .2s !important;
+    }
+    .nav-wa:hover { opacity: 0.85; color: #fff !important; }
+
+    /* ── WA FLOAT BUTTON ── */
+    .wa-inline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px;
+      background: transparent;
+      border: 1px solid #25D366;
+      color: #25D366;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none;
+      transition: background .25s, color .25s;
+    }
+    .wa-inline:hover { background: #25D366; color: #fff; }
+
+    /* ── BIO ── */
+    #bio {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      min-height: 70vh;
+    }
+    .bio-photo {
+      position: relative; overflow: hidden;
+      background: var(--bg3);
+    }
+    .bio-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      filter: grayscale(100%) contrast(1.05);
+      display: block;
+    }
+    .bio-content {
+      padding: 80px 60px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .bio-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 700; line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text); margin-bottom: 28px;
+    }
+    .bio-text {
+      font-size: 15px; color: var(--text2); line-height: 1.85;
+      margin-bottom: 16px; max-width: 460px;
+    }
+    .bio-tags {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; margin-bottom: 36px;
+    }
+    .bio-tag {
+      font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent); padding: 5px 12px;
+      border: 1px solid rgba(200,184,122,0.3);
+    }
+
+    /* ── SERVIÇOS ── */
+    #servicos {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+    .servico-item {
+      background: var(--bg);
+      padding: 56px 44px;
+      position: relative;
+    }
+    .servico-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px; font-weight: 700;
+      color: var(--border2); line-height: 1;
+      margin-bottom: 24px;
+    }
+    .servico-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px; font-weight: 600;
+      color: var(--text); margin-bottom: 14px; line-height: 1.2;
+    }
+    .servico-item p {
+      font-size: 13px; color: var(--text2); line-height: 1.75;
+      margin-bottom: 28px;
+    }
+    .servico-lista { list-style: none; margin-bottom: 32px; }
+    .servico-lista li {
+      font-size: 12px; color: var(--text3); padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; gap: 10px; align-items: center;
+    }
+    .servico-lista li::before { content: '—'; color: var(--accent); flex-shrink: 0; }
+    .servicos-cta-row {
+      text-align: center; padding-top: 16px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
+    .hero-text {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 80px 60px 80px 60px;
+    }
+    .hero-eyebrow {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 28px;
+    }
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(56px, 6vw, 88px);
+      font-weight: 700; line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(18px, 2vw, 26px);
+      font-weight: 400; font-style: italic;
+      color: var(--text2); margin-bottom: 40px;
+    }
+    .hero-divider {
+      width: 48px; height: 1px;
+      background: var(--accent);
+      margin-bottom: 36px;
+    }
+    .hero-desc {
+      font-size: 15px; color: var(--text2); line-height: 1.85;
+      max-width: 420px; margin-bottom: 48px;
+    }
+    .hero-cta {
+      display: flex; gap: 20px; align-items: center;
+    }
+    .btn-main {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 32px;
+      background: transparent;
+      border: 1px solid var(--border2);
+      color: var(--text);
+      font-size: 12px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      transition: border-color .3s, color .3s;
+    }
+    .btn-main:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-link {
+      font-size: 12px; font-weight: 400; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text3);
+      text-decoration: none; transition: color .2s;
+    }
+    .btn-link:hover { color: var(--text); }
+
+    .hero-photo {
+      position: relative; overflow: hidden;
+      background: var(--bg3);
+    }
+    .hero-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 30%;
+      filter: grayscale(100%) contrast(1.05);
+      display: block;
+    }
+    .hero-photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(160deg, #1a1a1a 0%, #0d0d0d 100%);
+      font-family: 'Playfair Display', serif;
+      font-size: 120px; font-weight: 700;
+      color: rgba(255,255,255,0.04);
+      user-select: none;
+    }
+    /* Overlay sutil no canto */
+    .hero-photo::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(8,8,8,0.3) 0%, transparent 30%);
+      pointer-events: none;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stat-item {
+      padding: 44px 32px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px; font-weight: 700;
+      color: var(--text); line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text3);
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 60px; }
+    .section-header { margin-bottom: 64px; }
+    .section-eyebrow {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700; letter-spacing: -0.02em;
+      color: var(--text); line-height: 1.1;
+    }
+    .section-subtitle {
+      font-size: 15px; color: var(--text2); margin-top: 16px;
+      max-width: 500px; line-height: 1.7;
+    }
+
+    /* ── PLAYERS GRID ── */
+    #players { background: var(--bg); }
+    .players-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .player-card {
+      background: var(--bg);
+      padding: 36px 24px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: background .25s;
+      position: relative;
+    }
+    .player-card:hover { background: var(--bg3); }
+    .player-card:hover .player-avatar { filter: grayscale(0%); }
+    .player-avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 16px;
+      filter: grayscale(100%);
+      transition: filter .3s;
+      border: 2px solid var(--border2);
+      background: var(--bg3);
+    }
+    .player-avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .player-avatar-fallback {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 24px; font-weight: 700; color: var(--text3);
+    }
+    .player-name {
+      font-size: 13px; font-weight: 600; color: var(--text);
+      margin-bottom: 4px; line-height: 1.3;
+    }
+    .player-handle {
+      font-size: 11px; color: var(--text3); margin-bottom: 12px;
+    }
+    .player-followers {
+      font-size: 12px; font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+    .player-niche {
+      font-size: 10px; color: var(--text3); margin-top: 5px;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── EXPERTISE ── */
+    #expertise { background: var(--bg2); border-top: 1px solid var(--border); }
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .expertise-item {
+      background: var(--bg2);
+      padding: 48px 40px;
+    }
+    .expertise-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px; font-weight: 700;
+      color: var(--border2); line-height: 1;
+      margin-bottom: 20px;
+    }
+    .expertise-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px; font-weight: 600;
+      color: var(--text); margin-bottom: 12px;
+    }
+    .expertise-item p {
+      font-size: 13px; color: var(--text2); line-height: 1.7;
+    }
+    .expertise-tags {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px;
+    }
+    .etag {
+      font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text3); padding: 4px 10px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── WEBSCALE ── */
+    #webscale {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+    .webscale-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .webscale-list { list-style: none; margin-top: 40px; }
+    .webscale-list li {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 16px 0; border-bottom: 1px solid var(--border);
+      font-size: 14px; color: var(--text2);
+    }
+    .webscale-list li:last-child { border-bottom: none; }
+    .webscale-list li::before {
+      content: '—'; color: var(--accent); flex-shrink: 0;
+    }
+    .webscale-card {
+      border: 1px solid var(--border2);
+      padding: 52px 48px;
+      text-decoration: none; display: block;
+    }
+    .webscale-card:hover { border-color: var(--accent); }
+    .wc-eyebrow {
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 20px;
+    }
+    .wc-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px; font-weight: 700;
+      color: var(--text); line-height: 1.1; margin-bottom: 24px;
+    }
+    .wc-desc {
+      font-size: 14px; color: var(--text2); line-height: 1.75;
+    }
+    .wc-handle {
+      display: flex; align-items: center; gap: 8px;
+      margin-top: 28px; font-size: 12px; color: var(--text3);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── COMPANIES ── */
+    #empresas {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+    }
+    .companies-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .company-item {
+      background: var(--bg2);
+      padding: 52px 44px;
+      text-decoration: none;
+      display: block;
+      transition: background .25s;
+    }
+    .company-item:hover { background: var(--bg3); }
+    .company-initial {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px; font-weight: 700;
+      color: var(--border2); line-height: 1;
+      margin-bottom: 24px;
+    }
+    .company-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px; font-weight: 600;
+      color: var(--text); margin-bottom: 8px;
+    }
+    .company-role {
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 16px;
+    }
+    .company-item p {
+      font-size: 13px; color: var(--text2); line-height: 1.7;
+    }
+
+    /* ── RESULTADOS ── */
+    #resultados {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .result-item {
+      background: var(--bg);
+      padding: 52px 40px;
+    }
+    .result-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px; font-weight: 700;
+      color: var(--text); line-height: 1;
+      margin-bottom: 12px;
+    }
+    .result-label {
+      font-size: 13px; color: var(--text2); line-height: 1.6;
+    }
+    .result-context {
+      font-size: 10px; color: var(--text3); margin-top: 10px;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+
+    /* ── DEPOIMENTOS ── */
+    #depoimentos {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .testimonial-item {
+      background: var(--bg2);
+      padding: 52px 44px;
+    }
+    .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px; line-height: 1;
+      color: var(--border2); margin-bottom: 8px;
+    }
+    .testimonial-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px; font-style: italic;
+      color: var(--text2); line-height: 1.75;
+      margin-bottom: 32px;
+    }
+    .testimonial-author-name {
+      font-size: 13px; font-weight: 600; color: var(--text);
+    }
+    .testimonial-author-role {
+      font-size: 11px; color: var(--text3); margin-top: 3px;
+    }
+
+    /* ── FOOTER CTA ── */
+    .footer-cta {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 80vh;
+    }
+    .footer-cta-photo {
+      position: relative; overflow: hidden;
+      background: var(--bg3);
+    }
+    .footer-cta-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 15%;
+      filter: grayscale(100%) contrast(1.05);
+      display: block;
+    }
+    .footer-cta-content {
+      padding: 80px 60px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .footer-cta-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 3.5vw, 54px);
+      font-weight: 700; line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text); margin-bottom: 24px;
+    }
+    .footer-cta-sub {
+      font-size: 15px; color: var(--text2); line-height: 1.75;
+      max-width: 420px; margin-bottom: 40px;
+    }
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 32px;
+      background: #25D366;
+      color: #fff;
+      font-size: 13px; font-weight: 600; letter-spacing: 0.06em;
+      text-decoration: none; border-radius: 2px;
+      width: fit-content;
+      transition: opacity .2s;
+    }
+    .btn-whatsapp:hover { opacity: 0.88; }
+    .contact-links { display: flex; flex-direction: column; gap: 12px; }
+    .contact-link {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 13px; color: var(--text2); text-decoration: none;
+      transition: color .2s;
+      padding-bottom: 12px; border-bottom: 1px solid var(--border);
+    }
+    .contact-link:hover { color: var(--text); }
+    .contact-link span { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    footer {
+      text-align: center; padding: 28px 60px;
+      font-size: 11px; color: var(--text3);
+      border-top: 1px solid var(--border);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .nav-links { display: none; }
+      section { padding: 80px 24px; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-text { padding: 100px 24px 60px; }
+      .hero-photo { height: 70vw; }
+      .stats-bar { grid-template-columns: repeat(3, 1fr); }
+      .expertise-grid { grid-template-columns: 1fr; }
+      .companies-grid { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .webscale-inner { grid-template-columns: 1fr; gap: 40px; }
+      .footer-cta { grid-template-columns: 1fr; }
+      .footer-cta-photo { height: 70vw; }
+      .footer-cta-content { padding: 60px 24px; }
+      .players-grid { grid-template-columns: repeat(3, 1fr); }
+      #bio { grid-template-columns: 1fr; }
+      .bio-photo { height: 80vw; }
+      .bio-content { padding: 60px 24px; }
+      .servicos-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 540px) {
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .players-grid { grid-template-columns: repeat(2, 1fr); }
+      .results-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Rafaela Nogueira</div>
+  <div class="nav-links">
+    <a href="#bio">Sobre</a>
+    <a href="#players">Players</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#empresas">Empresas</a>
+    <a href="#resultados">Resultados</a>
+    <a href="https://wa.link/2788wd" target="_blank" class="nav-wa">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar comigo
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <h1 class="hero-name">Rafaela<br/>Nogueira</h1>
+    <p class="hero-title">Especialista em vendas, times comerciais e receita escalável</p>
+    <div class="hero-divider"></div>
+    <p class="hero-desc">
+      Estruturo operações comerciais do zero — da contratação à liderança de times de alta performance. Atuo no cruzamento entre creator economy e mercado corporativo, com domínio completo de funis de venda, CRM, gestão de indicadores e desenvolvimento de pessoas.
+    </p>
+    <div class="hero-cta">
+      <a href="https://wa.link/2788wd" target="_blank" class="btn-whatsapp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar comigo
+      </a>
+      <a href="#bio" class="btn-link">Conheça meu trabalho ↓</a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="images/rafa-hero-new.jpg" alt="Rafaela Nogueira"
+         onerror="this.parentElement.innerHTML='<div class=\'hero-photo-placeholder\'>RN</div>'" />
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">+30</div>
+    <div class="stat-label">Operações atendidas</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">Centenas</div>
+    <div class="stat-label">De vendedores formados</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">+R$70M</div>
+    <div class="stat-label">Em faturamento gerado para clientes</div>
+  </div>
+</div>
+
+<!-- BIO -->
+<div id="bio">
+  <div class="bio-photo">
+    <img src="images/rafa-bio.jpg" alt="Rafaela Nogueira"
+         onerror="this.style.display='none'" />
+  </div>
+  <div class="bio-content">
+    <p class="section-eyebrow">Sobre mim</p>
+    <h2 class="bio-title">Sou Rafaela<br/>Nogueira</h2>
+    <p class="bio-text">
+      Especialista em estruturação comercial e vendas, com mais de 10 anos de experiência no mercado corporativo e digital.
+    </p>
+    <p class="bio-text">
+      Construí e liderei times comerciais de grandes players do mercado de saúde e fitness, com impacto direto no faturamento de operações que movimentam dezenas de milhões de reais por ano.
+    </p>
+    <p class="bio-text">
+      Integro estratégia, operação e aquisição em um único motor comercial. Também sou estudante de Psicologia — o que me dá uma leitura única sobre comportamento humano aplicado a vendas e liderança.
+    </p>
+    <div class="bio-tags">
+      <span class="bio-tag">Vendas</span>
+      <span class="bio-tag">Liderança Comercial</span>
+      <span class="bio-tag">Creator Economy</span>
+      <span class="bio-tag">Psicologia</span>
+      <span class="bio-tag">Head de Receita</span>
+    </div>
+    <a href="https://wa.link/2788wd" target="_blank" class="wa-inline">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Conversar comigo
+    </a>
+  </div>
+</div>
+
+<!-- PLAYERS -->
+<section id="players">
+  <div class="section-header">
+    <p class="section-eyebrow">Creator Economy</p>
+    <h2 class="section-title">Operações em que contribuí</h2>
+    <p class="section-subtitle">Estruturei e liderei times comerciais nos bastidores de gigantes do mercado digital.</p>
+  </div>
+
+  <div class="players-grid">
+
+    <a href="https://www.instagram.com/alexandrasolnadooficial/" target="_blank" class="player-card">
+      <div class="player-avatar">
+        <img src="images/players/alex-solnado.jpg" alt="Alex Solnado" />
+      </div>
+      <div class="player-name">Alex Solnado</div>
+      <div class="player-handle">@alexandrasolnadooficial</div>
+      <div class="player-followers">173K</div>
+      <div class="player-niche">Espiritualidade</div>
+    </a>
+
+    <a href="https://www.instagram.com/gutogalamba/" target="_blank" class="player-card">
+      <div class="player-avatar">
+        <img src="images/players/guto-galamba.jpg" alt="Guto Galamba" />
+      </div>
+      <div class="player-name">Guto Galamba</div>
+      <div class="player-handle">@gutogalamba</div>
+      <div class="player-followers">4M</div>
+      <div class="player-niche">Alta Performance</div>
+    </a>
+
+    <a href="https://www.instagram.com/zanonmacedo/" target="_blank" class="player-card">
+      <div class="player-avatar">
+        <img src="images/players/zanon-macedo.jpg" alt="Zanon Macedo" />
+      </div>
+      <div class="player-name">Zanon Macedo</div>
+      <div class="player-handle">@zanonmacedo</div>
+      <div class="player-followers">3M</div>
+      <div class="player-niche">Emagrecimento 40+</div>
+    </a>
+
+    <a href="https://www.instagram.com/fernandocantarelli_/" target="_blank" class="player-card">
+      <div class="player-avatar">
+        <img src="images/players/fernando-cantarelli.jpg" alt="Fernando Cantarelli" />
+      </div>
+      <div class="player-name">Fernando Cantarelli</div>
+      <div class="player-handle">@fernandocantarelli_</div>
+      <div class="player-followers">2M</div>
+      <div class="player-niche">Fitness</div>
+    </a>
+
+    <a href="https://www.instagram.com/aline_pamplonaa/" target="_blank" class="player-card">
+      <div class="player-avatar">
+        <img src="images/players/aline-pamplona.jpg" alt="Aline Pamplona" />
+      </div>
+      <div class="player-name">Aline Pamplona</div>
+      <div class="player-handle">@aline_pamplonaa</div>
+      <div class="player-followers">4M</div>
+      <div class="player-niche">Fitness</div>
+    </a>
+
+    <a href="https://www.instagram.com/iangaleno/" target="_blank" class="player-card">
+      <div class="player-avatar">
+        <img src="images/players/ian-galeno.jpg" alt="Ian Galeno" />
+      </div>
+      <div class="player-name">Ian Galeno</div>
+      <div class="player-handle">@iangaleno</div>
+      <div class="player-followers">73K</div>
+      <div class="player-niche">Fitness · Business</div>
+    </a>
+
+    <a href="https://www.instagram.com/onutridasestrelas/" target="_blank" class="player-card">
+      <div class="player-avatar">
+        <img src="images/players/nutri-estrelas.jpg" alt="Nutri das Estrelas" />
+      </div>
+      <div class="player-name">Nutri das Estrelas</div>
+      <div class="player-handle">@onutridasestrelas</div>
+      <div class="player-followers">1M</div>
+      <div class="player-niche">Nutrição Esportiva</div>
+    </a>
+
+    <a href="https://www.instagram.com/inemarfonseca/" target="_blank" class="player-card">
+      <div class="player-avatar">
+        <img src="images/players/inemar-fonseca.jpg" alt="Inemar Fonseca" />
+      </div>
+      <div class="player-name">Inemar Fonseca</div>
+      <div class="player-handle">@inemarfonseca</div>
+      <div class="player-followers">1M</div>
+      <div class="player-niche">Emagrecimento</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- WA CTA STRIP (after players) -->
+<div style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:36px 60px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+  <p style="font-family:'Playfair Display',serif;font-size:clamp(18px,2vw,26px);color:var(--text);font-weight:600;">Quer estruturar uma operação assim no seu negócio?</p>
+  <a href="https://wa.link/2788wd" target="_blank" class="btn-whatsapp" style="flex-shrink:0;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Falar comigo
+  </a>
+</div>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="section-header">
+    <p class="section-eyebrow">Competências</p>
+    <h2 class="section-title">Domínio técnico<br/>ponta a ponta</h2>
+    <p class="section-subtitle">Uno a estrutura do mercado corporativo ao dinamismo da creator economy.</p>
+  </div>
+
+  <div class="expertise-grid">
+    <div class="expertise-item">
+      <div class="expertise-num">01</div>
+      <h3>Funis de Venda Digital</h3>
+      <p>Domínio completo dos principais funis: lançamento, perpétuo, venda direta e formulários com quiz.</p>
+      <div class="expertise-tags">
+        <span class="etag">Lançamento</span>
+        <span class="etag">Perpétuo</span>
+        <span class="etag">Quiz Funnel</span>
+      </div>
+    </div>
+    <div class="expertise-item">
+      <div class="expertise-num">02</div>
+      <h3>Times Comerciais</h3>
+      <p>Contratação, estruturação, treinamento e liderança de times de receita. Liderei times internos de até 50 pessoas.</p>
+      <div class="expertise-tags">
+        <span class="etag">Recrutamento</span>
+        <span class="etag">Treinamento</span>
+        <span class="etag">Liderança</span>
+      </div>
+    </div>
+    <div class="expertise-item">
+      <div class="expertise-num">03</div>
+      <h3>CRM & Indicadores</h3>
+      <p>Análise profunda de indicadores de receita, construção de CRM e gestão de pipeline.</p>
+      <div class="expertise-tags">
+        <span class="etag">CRM</span>
+        <span class="etag">KPIs</span>
+        <span class="etag">Pipeline</span>
+      </div>
+    </div>
+    <div class="expertise-item">
+      <div class="expertise-num">04</div>
+      <h3>Head de Receita</h3>
+      <p>Atuação no ponta da operação: Marketing, Vendas e Customer Success. Visão integrada da jornada do cliente.</p>
+      <div class="expertise-tags">
+        <span class="etag">Marketing</span>
+        <span class="etag">Vendas</span>
+        <span class="etag">CS</span>
+      </div>
+    </div>
+    <div class="expertise-item">
+      <div class="expertise-num">05</div>
+      <h3>Creator Economy</h3>
+      <p>Expertise nos bastidores de criadores de grande escala, estruturando operações comerciais do zero.</p>
+      <div class="expertise-tags">
+        <span class="etag">Infoprodutos</span>
+        <span class="etag">Lançamentos</span>
+        <span class="etag">SDR / Closer</span>
+      </div>
+    </div>
+    <div class="expertise-item">
+      <div class="expertise-num">06</div>
+      <h3>Mercado Corporativo</h3>
+      <p>Sólida experiência em corporações com processos estruturados, gestão de indicadores e desenvolvimento de lideranças.</p>
+      <div class="expertise-tags">
+        <span class="etag">B2B</span>
+        <span class="etag">Gestão de Pessoas</span>
+        <span class="etag">OKR</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- EMPRESAS -->
+<section id="empresas">
+  <div class="section-header">
+    <p class="section-eyebrow">Mercado Corporativo</p>
+    <h2 class="section-title">Grandes empresas<br/>onde atuei</h2>
+    <p class="section-subtitle">Experiência nas mais diversas cadeiras comerciais do mercado corporativo tradicional.</p>
+  </div>
+
+  <div class="companies-grid">
+    <a href="https://weex.digital/" target="_blank" class="company-item">
+      <div class="company-initial">W.</div>
+      <h3>Weex</h3>
+      <p class="company-role">BDR · Prospecção Outbound</p>
+      <p>Liderança em prospecção outbound como BDR no mercado financeiro digital.</p>
+    </a>
+    <a href="https://www.instagram.com/escolasetmind/" target="_blank" class="company-item">
+      <div class="company-initial">S.</div>
+      <h3>Setmind</h3>
+      <p class="company-role">Líder Comercial & Executiva</p>
+      <p>Liderança comercial e atuação como executiva de vendas em escola de desenvolvimento humano.</p>
+    </a>
+    <a href="https://wiseup.com/" target="_blank" class="company-item">
+      <div class="company-initial">W.</div>
+      <h3>WiseUp</h3>
+      <p class="company-role">Executiva de Vendas</p>
+      <p>Minha primeira formação como vendedora — uma das maiores redes de ensino de idiomas do Brasil.</p>
+    </a>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section id="resultados">
+  <div class="section-header">
+    <p class="section-eyebrow">Resultados</p>
+    <h2 class="section-title">Números que<br/>falam por si</h2>
+  </div>
+
+  <div class="results-grid">
+    <div class="result-item">
+      <div class="result-num">R$70M+</div>
+      <div class="result-label">De faturamento gerado para os clientes</div>
+      <div class="result-context">Contribuição comercial direta</div>
+    </div>
+    <div class="result-item">
+      <div class="result-num">50+</div>
+      <div class="result-label">Pessoas lideradas no maior time interno</div>
+      <div class="result-context">Creator economy</div>
+    </div>
+    <div class="result-item">
+      <div class="result-num">100+</div>
+      <div class="result-label">Vendedores formados do zero</div>
+      <div class="result-context">SDRs, Closers, Hunters</div>
+    </div>
+    <div class="result-item">
+      <div class="result-num">30+</div>
+      <div class="result-label">Operações atendidas no mercado digital</div>
+      <div class="result-context">Creator economy</div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="section-header">
+    <p class="section-eyebrow">Depoimentos</p>
+    <h2 class="section-title">O que dizem sobre<br/>meu trabalho</h2>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-item">
+      <div class="quote-mark">"</div>
+      <p class="testimonial-text">Adicione aqui o depoimento do seu cliente ou parceiro. Quanto mais específico e com resultados concretos, mais impacto terá.</p>
+      <div class="testimonial-author-name">Nome do Depoente</div>
+      <div class="testimonial-author-role">Cargo · Empresa</div>
+    </div>
+    <div class="testimonial-item">
+      <div class="quote-mark">"</div>
+      <p class="testimonial-text">Adicione aqui o depoimento do seu cliente ou parceiro. Quanto mais específico e com resultados concretos, mais impacto terá.</p>
+      <div class="testimonial-author-name">Nome do Depoente</div>
+      <div class="testimonial-author-role">Cargo · Empresa</div>
+    </div>
+    <div class="testimonial-item">
+      <div class="quote-mark">"</div>
+      <p class="testimonial-text">Adicione aqui o depoimento do seu cliente ou parceiro. Quanto mais específico e com resultados concretos, mais impacto terá.</p>
+      <div class="testimonial-author-name">Nome do Depoente</div>
+      <div class="testimonial-author-role">Cargo · Empresa</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="section-header">
+    <p class="section-eyebrow">Serviços</p>
+    <h2 class="section-title">Como posso<br/>te ajudar</h2>
+    <p class="section-subtitle">Trabalho com empresas e líderes que querem crescer com estrutura, processos e times de alta performance.</p>
+  </div>
+
+  <div class="servicos-grid">
+
+    <div class="servico-item">
+      <div class="servico-num">01</div>
+      <h3>Treinamento Comercial</h3>
+      <p>Desenvolvimento prático de times de vendas — da mentalidade à técnica. Formo SDRs, closers e hunters do zero ou elevo times que já existem.</p>
+      <ul class="servico-lista">
+        <li>Metodologia de vendas consultivas</li>
+        <li>Scripts e cadências de prospecção</li>
+        <li>Gestão de objeções e fechamento</li>
+        <li>Indicadores e metas por função</li>
+      </ul>
+      <a href="https://wa.link/2788wd" target="_blank" class="wa-inline">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Quero esse serviço
+      </a>
+    </div>
+
+    <div class="servico-item">
+      <div class="servico-num">02</div>
+      <h3>Consultoria para Lideranças</h3>
+      <p>Para líderes comerciais que precisam de clareza estratégica, gestão de people e ferramentas para escalar sem depender só de si mesmos.</p>
+      <ul class="servico-lista">
+        <li>Diagnóstico da operação comercial</li>
+        <li>Gestão de KPIs e dashboards</li>
+        <li>Desenvolvimento de líderes de vendas</li>
+        <li>Estratégia de receita integrada</li>
+      </ul>
+      <a href="https://wa.link/2788wd" target="_blank" class="wa-inline">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Quero esse serviço
+      </a>
+    </div>
+
+    <div class="servico-item">
+      <div class="servico-num">03</div>
+      <h3>Contratação e Estruturação de Times</h3>
+      <p>Do zero ao time completo. Processo de recrutamento, onboarding comercial, criação de trilhas de treinamento e estrutura de cargos e salários.</p>
+      <ul class="servico-lista">
+        <li>Perfil ideal de vendedor por operação</li>
+        <li>Processo seletivo e entrevistas técnicas</li>
+        <li>Onboarding e ramp-up estruturado</li>
+        <li>Plano de carreira e remuneração variável</li>
+      </ul>
+      <a href="https://wa.link/2788wd" target="_blank" class="wa-inline">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Quero esse serviço
+      </a>
+    </div>
+
+  </div>
+
+  <div class="servicos-cta-row">
+    <a href="https://wa.link/2788wd" target="_blank" class="btn-whatsapp" style="margin:0 auto;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Não sei por onde começar — quero conversar
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<div class="footer-cta">
+  <div class="footer-cta-photo">
+    <img src="images/rafa-cta.jpg" alt="Rafaela Nogueira" />
+  </div>
+  <div class="footer-cta-content">
+    <p class="section-eyebrow" style="margin-bottom:20px;">Consultoria Comercial</p>
+    <h2 class="footer-cta-title">Quer o meu olhar<br/>no seu negócio?</h2>
+    <p class="footer-cta-sub">Quero te ajudar a construir o seu time de receita, com escala e dados. Marque uma reunião com meu time para conseguirmos te direcionar.</p>
+    <a href="https://wa.link/2788wd" target="_blank" class="btn-whatsapp">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar sobre consultoria
+    </a>
+    <div class="contact-links" style="margin-top:32px;">
+      <a href="mailto:rafaelanoguerr@gmail.com" class="contact-link">
+        <span>Email</span>
+        rafaelanoguerr@gmail.com
+      </a>
+      <a href="https://www.instagram.com/rafaelanoguerr" target="_blank" class="contact-link">
+        <span>Instagram</span>
+        @rafaelanoguerr
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 Rafaela Nogueira · Todos os direitos reservados
+</footer>
+
+</body>
+</html>
