@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rafaela Nogueira — Especialista em Vendas & Head de Receita</title>
+  <meta name="description" content="Especialista em vendas, construção de times comerciais e funis de venda digital. Creator economy e mercado corporativo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #080808;
+      --bg2: #0d0d0d;
+      --bg3: #121212;
+      --border: rgba(255,255,255,0.06);
+      --border2: rgba(255,255,255,0.12);
+      --text: #e8e8e0;
+      --text2: #a0a090;
+      --text3: #666;
+      --accent: #c8b87a;
+      --accent2: rgba(200,184,122,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 24px 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(8,8,8,0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px; font-weight: 700;
+      color: var(--text); letter-spacing: 0.02em;
+    }
+    .nav-links { display: flex; gap: 36px; }
+    .nav-links a {
+      font-size: 12px; font-weight: 400; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text3);
+      text-decoration: none; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
+    .hero-text {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 80px 60px 80px 60px;
+    }
+    .hero-eyebrow {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 28px;
+    }
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(56px, 6vw, 88px);
+      font-weight: 700; line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(18px, 2vw, 26px);
+      font-weight: 400; font-style: italic;
+      color: var(--text2); margin-bottom: 40px;
+    }
+    .hero-divider {
+      width: 48px; height: 1px;
+      background: var(--accent);
+      margin-bottom: 36px;
+    }
+    .hero-desc {
+      font-size: 15px; color: var(--text2); line-height: 1.85;
+      max-width: 420px; margin-bottom: 48px;
+    }
+    .hero-cta {
+      display: flex; gap: 20px; align-items: center;
+    }
+    .btn-main {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 32px;
+      background: transparent;
+      border: 1px solid var(--border2);
+      color: var(--text);
+      font-size: 12px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      transition: border-color .3s, color .3s;
+    }
+    .btn-main:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-link {
+      font-size: 12px; font-weight: 400; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text3);
+      text-decoration: none; transition: color .2s;
+    }
+    .btn-link:hover { color: var(--text); }
+
+    .hero-photo {
+      position: relative; overflow: hidden;
+      background: var(--bg3);
+    }
+    .hero-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 20%;
+      filter: grayscale(100%) contrast(1.05);
+      display: block;
+    }
+    .hero-photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(160deg, #1a1a1a 0%, #0d0d0d 100%);
+      font-family: 'Playfair Display', serif;
+      font-size: 120px; font-weight: 700;
+      color: rgba(255,255,255,0.04);
+      user-select: none;
+    }
+    /* Overlay sutil no canto */
+    .hero-photo::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(8,8,8,0.3) 0%, transparent 30%);
+      pointer-events: none;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stat-item {
+      padding: 44px 32px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px; font-weight: 700;
+      color: var(--text); line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text3);
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 60px; }
+    .section-header { margin-bottom: 64px; }
+    .section-eyebrow {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700; letter-spacing: -0.02em;
+      color: var(--text); line-height: 1.1;
+    }
+    .section-subtitle {
+      font-size: 15px; color: var(--text2); margin-top: 16px;
+      max-width: 500px; line-height: 1.7;
+    }
+
+    /* ── PLAYERS GRID ── */
+    #players { background: var(--bg); }
+    .players-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .player-card {
+      background: var(--bg);
+      padding: 36px 24px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: background .25s;
+      position: relative;
+    }
+    .player-card:hover { background: var(--bg3); }
+    .player-card:hover .player-avatar { filter: grayscale(0%); }
+    .player-avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 16px;
+      filter: grayscale(100%);
+      transition: filter .3s;
+      border: 2px solid var(--border2);
+      background: var(--bg3);
+    }
+    .player-avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .player-avatar-fallback {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 24px; font-weight: 700; color: var(--text3);
+    }
+    .player-name {
+      font-size: 13px; font-weight: 600; color: var(--text);
+      margin-bottom: 4px; line-height: 1.3;
+    }
+    .player-handle {
+      font-size: 11px; color: var(--text3); margin-bottom: 12px;
+    }
+    .player-followers {
+      font-size: 12px; font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+    .player-niche {
+      font-size: 10px; color: var(--text3); margin-top: 5px;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── EXPERTISE ── */
+    #expertise { background: var(--bg2); border-top: 1px solid var(--border); }
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .expertise-item {
+      background: var(--bg2);
+      padding: 48px 40px;
+    }
+    .expertise-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px; font-weight: 700;
+      color: var(--border2); line-height: 1;
+      margin-bottom: 20px;
+    }
+    .expertise-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px; font-weight: 600;
+      color: var(--text); margin-bottom: 12px;
+    }
+    .expertise-item p {
+      font-size: 13px; color: var(--text2); line-height: 1.7;
+    }
+    .expertise-tags {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px;
+    }
+    .etag {
+      font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text3); padding: 4px 10px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── WEBSCALE ── */
+    #webscale {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+    .webscale-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .webscale-list { list-style: none; margin-top: 40px; }
+    .webscale-list li {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 16px 0; border-bottom: 1px solid var(--border);
+      font-size: 14px; color: var(--text2);
+    }
+    .webscale-list li:last-child { border-bottom: none; }
+    .webscale-list li::before {
+      content: '—'; color: var(--accent); flex-shrink: 0;
+    }
+    .webscale-card {
+      border: 1px solid var(--border2);
+      padding: 52px 48px;
+      text-decoration: none; display: block;
+    }
+    .webscale-card:hover { border-color: var(--accent); }
+    .wc-eyebrow {
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 20px;
+    }
+    .wc-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px; font-weight: 700;
+      color: var(--text); line-height: 1.1; margin-bottom: 24px;
+    }
+    .wc-desc {
+      font-size: 14px; color: var(--text2); line-height: 1.75;
+    }
+    .wc-handle {
+      display: flex; align-items: center; gap: 8px;
+      margin-top: 28px; font-size: 12px; color: var(--text3);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── COMPANIES ── */
+    #empresas {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+    }
+    .companies-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .company-item {
+      background: var(--bg2);
+      padding: 52px 44px;
+      text-decoration: none;
+      display: block;
+      transition: background .25s;
+    }
+    .company-item:hover { background: var(--bg3); }
+    .company-initial {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px; font-weight: 700;
+      color: var(--border2); line-height: 1;
+      margin-bottom: 24px;
+    }
+    .company-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px; font-weight: 600;
+      color: var(--text); margin-bottom: 8px;
+    }
+    .company-role {
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 16px;
+    }
+    .company-item p {
+      font-size: 13px; color: var(--text2); line-height: 1.7;
+    }
+
+    /* ── RESULTADOS ── */
+    #resultados {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .result-item {
+      background: var(--bg);
+      padding: 52px 40px;
+    }
+    .result-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px; font-weight: 700;
+      color: var(--text); line-height: 1;
+      margin-bottom: 12px;
+    }
+    .result-label {
+      font-size: 13px; color: var(--text2); line-height: 1.6;
+    }
+    .result-context {
+      font-size: 10px; color: var(--text3); margin-top: 10px;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+
+    /* ── DEPOIMENTOS ── */
+    #depoimentos {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .testimonial-item {
+      background: var(--bg2);
+      padding: 52px 44px;
+    }
+    .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px; line-height: 1;
+      color: var(--border2); margin-bottom: 8px;
+    }
+    .testimonial-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px; font-style: italic;
+      color: var(--text2); line-height: 1.75;
+      margin-bottom: 32px;
+    }
+    .testimonial-author-name {
+      font-size: 13px; font-weight: 600; color: var(--text);
+    }
+    .testimonial-author-role {
+      font-size: 11px; color: var(--text3); margin-top: 3px;
+    }
+
+    /* ── FOOTER CTA ── */
+    .footer-cta {
+      padding: 120px 60px;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .footer-cta-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 4vw, 60px);
+      font-weight: 700; line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .footer-cta-right { display: flex; flex-direction: column; gap: 24px; }
+    .footer-cta-right p {
+      font-size: 15px; color: var(--text2); line-height: 1.75;
+    }
+    .contact-links { display: flex; flex-direction: column; gap: 12px; }
+    .contact-link {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 13px; color: var(--text2); text-decoration: none;
+      transition: color .2s;
+      padding-bottom: 12px; border-bottom: 1px solid var(--border);
+    }
+    .contact-link:hover { color: var(--text); }
+    .contact-link span { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    footer {
+      text-align: center; padding: 28px 60px;
+      font-size: 11px; color: var(--text3);
+      border-top: 1px solid var(--border);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .nav-links { display: none; }
+      section { padding: 80px 24px; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-text { padding: 100px 24px 60px; }
+      .hero-photo { height: 70vw; }
+      .stats-bar { grid-template-columns: repeat(3, 1fr); }
+      .expertise-grid { grid-template-columns: 1fr; }
+      .companies-grid { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .webscale-inner { grid-template-columns: 1fr; gap: 40px; }
+      .footer-cta { grid-template-columns: 1fr; padding: 80px 24px; }
+      .players-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 540px) {
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .players-grid { grid-template-columns: repeat(2, 1fr); }
+      .results-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Rafaela Nogueira</div>
+  <div class="nav-links">
+    <a href="#players">Players</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#empresas">Empresas</a>
+    <a href="#resultados">Resultados</a>
+    <a href="#depoimentos">Depoimentos</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <h1 class="hero-name">Rafaela<br/>Nogueira</h1>
+    <p class="hero-title">Especialista em estruturação de times de receita</p>
+    <div class="hero-divider"></div>
+    <p class="hero-desc">
+      Estruturo operações comerciais do zero — da contratação à liderança de times de alta performance. Atuo no cruzamento entre creator economy e mercado corporativo, com domínio completo de funis de venda, CRM, gestão de indicadores e desenvolvimento de pessoas.
+    </p>
+    <div class="hero-cta">
+      <a href="mailto:rafaelanoguerr@gmail.com" class="btn-main">Entrar em contato</a>
+      <a href="#players" class="btn-link">Ver portfólio ↓</a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="images/rafa-hero.jpg" alt="Rafaela Nogueira"
+         onerror="this.parentElement.innerHTML='<div class=\'hero-photo-placeholder\'>RN</div>'" />
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">30+</div>
+    <div class="stat-label">Operações atendidas</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">50+</div>
+    <div class="stat-label">Pessoas lideradas</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">100+</div>
+    <div class="stat-label">Vendedores formados</div>
+  </div>
+</div>
+
+<!-- PLAYERS -->
+<section id="players">
+  <div class="section-header">
+    <p class="section-eyebrow">Creator Economy</p>
+    <h2 class="section-title">Operações em que contribuí</h2>
+    <p class="section-subtitle">Estruturei e liderei times comerciais nos bastidores de gigantes do mercado digital.</p>
+  </div>
+
+  <div class="players-grid">
+
+    <a href="https://www.instagram.com/alexandrasolnadooficial/" target="_blank" class="player-card">
+      <div class="player-avatar">
+        <img src="https://unavatar.io/instagram/alexandrasolnadooficial"
+             onerror="this.parentElement.innerHTML='<div class=\'player-avatar-fallback\'>AS</div>'"
+             alt="Alex Solnado" />
+      </div>
+      <div class="player-name">Alex Solnado</div>
+      <div class="player-handle">@alexandrasolnadooficial</div>
+      <div class="player-followers">173K</div>
+      <div class="player-niche">Espiritualidade</div>
+    </a>
+
+    <a href="https://www.instagram.com/gutogalamba/" target="_blank" class="player-card">
+      <div class="player-avatar">
+        <img src="https://unavatar.io/instagram/gutogalamba"
+             onerror="this.parentElement.innerHTML='<div class=\'player-avatar-fallback\'>GG</div>'"
+             alt="Guto Galamba" />
+      </div>
+      <div class="player-name">Guto Galamba</div>
+      <div class="player-handle">@gutogalamba</div>
+      <div class="player-followers">4M</div>
+      <div class="player-niche">Alta Performance</div>
+    </a>
+
+    <a href="https://www.instagram.com/zanonmacedo/" target="_blank" class="player-card">
+      <div class="player-avatar">
+        <img src="https://unavatar.io/instagram/zanonmacedo"
+             onerror="this.parentElement.innerHTML='<div class=\'player-avatar-fallback\'>ZM</div>'"
+             alt="Zanon Macedo" />
+      </div>
+      <div class="player-name">Zanon Macedo</div>
+      <div class="player-handle">@zanonmacedo</div>
+      <div class="player-followers">3M</div>
+      <div class="player-niche">Emagrecimento 40+</div>
+    </a>
+
+    <a href="https://www.instagram.com/fernandocantarelli_/" target="_blank" class="player-card">
+      <div class="player-avatar">
+        <img src="https://unavatar.io/instagram/fernandocantarelli_"
+             onerror="this.parentElement.innerHTML='<div class=\'player-avatar-fallback\'>FC</div>'"
+             alt="Fernando Cantarelli" />
+      </div>
+      <div class="player-name">Fernando Cantarelli</div>
+      <div class="player-handle">@fernandocantarelli_</div>
+      <div class="player-followers">2M</div>
+      <div class="player-niche">Fitness</div>
+    </a>
+
+    <a href="https://www.instagram.com/aline_pamplonaa/" target="_blank" class="player-card">
+      <div class="player-avatar">
+        <img src="https://unavatar.io/instagram/aline_pamplonaa"
+             onerror="this.parentElement.innerHTML='<div class=\'player-avatar-fallback\'>AP</div>'"
+             alt="Aline Pamplona" />
+      </div>
+      <div class="player-name">Aline Pamplona</div>
+      <div class="player-handle">@aline_pamplonaa</div>
+      <div class="player-followers">4M</div>
+      <div class="player-niche">Finanças Pessoais</div>
+    </a>
+
+    <a href="https://www.instagram.com/iangaleno/" target="_blank" class="player-card">
+      <div class="player-avatar">
+        <img src="https://unavatar.io/instagram/iangaleno"
+             onerror="this.parentElement.innerHTML='<div class=\'player-avatar-fallback\'>IG</div>'"
+             alt="Ian Galeno" />
+      </div>
+      <div class="player-name">Ian Galeno</div>
+      <div class="player-handle">@iangaleno</div>
+      <div class="player-followers">73K</div>
+      <div class="player-niche">Fitness · Business</div>
+    </a>
+
+    <a href="https://www.instagram.com/onutridasestrelas/" target="_blank" class="player-card">
+      <div class="player-avatar">
+        <img src="https://unavatar.io/instagram/onutridasestrelas"
+             onerror="this.parentElement.innerHTML='<div class=\'player-avatar-fallback\'>NE</div>'"
+             alt="Nutri das Estrelas" />
+      </div>
+      <div class="player-name">Nutri das Estrelas</div>
+      <div class="player-handle">@onutridasestrelas</div>
+      <div class="player-followers">1M</div>
+      <div class="player-niche">Nutrição Esportiva</div>
+    </a>
+
+    <a href="https://www.instagram.com/inemarfonseca/" target="_blank" class="player-card">
+      <div class="player-avatar">
+        <img src="https://unavatar.io/instagram/inemarfonseca"
+             onerror="this.parentElement.innerHTML='<div class=\'player-avatar-fallback\'>IF</div>'"
+             alt="Inemar Fonseca" />
+      </div>
+      <div class="player-name">Inemar Fonseca</div>
+      <div class="player-handle">@inemarfonseca</div>
+      <div class="player-followers">1M</div>
+      <div class="player-niche">Emagrecimento</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="section-header">
+    <p class="section-eyebrow">Competências</p>
+    <h2 class="section-title">Domínio técnico<br/>ponta a ponta</h2>
+    <p class="section-subtitle">Uno a estrutura do mercado corporativo ao dinamismo da creator economy.</p>
+  </div>
+
+  <div class="expertise-grid">
+    <div class="expertise-item">
+      <div class="expertise-num">01</div>
+      <h3>Funis de Venda Digital</h3>
+      <p>Domínio completo dos principais funis: lançamento, perpétuo, venda direta e formulários com quiz.</p>
+      <div class="expertise-tags">
+        <span class="etag">Lançamento</span>
+        <span class="etag">Perpétuo</span>
+        <span class="etag">Quiz Funnel</span>
+      </div>
+    </div>
+    <div class="expertise-item">
+      <div class="expertise-num">02</div>
+      <h3>Times Comerciais</h3>
+      <p>Contratação, estruturação, treinamento e liderança de times de receita. Liderei times internos de até 50 pessoas.</p>
+      <div class="expertise-tags">
+        <span class="etag">Recrutamento</span>
+        <span class="etag">Treinamento</span>
+        <span class="etag">Liderança</span>
+      </div>
+    </div>
+    <div class="expertise-item">
+      <div class="expertise-num">03</div>
+      <h3>CRM & Indicadores</h3>
+      <p>Análise profunda de indicadores de receita, construção de CRM e gestão de pipeline.</p>
+      <div class="expertise-tags">
+        <span class="etag">CRM</span>
+        <span class="etag">KPIs</span>
+        <span class="etag">Pipeline</span>
+      </div>
+    </div>
+    <div class="expertise-item">
+      <div class="expertise-num">04</div>
+      <h3>Head de Receita</h3>
+      <p>Atuação no ponta da operação: Marketing, Vendas e Customer Success. Visão integrada da jornada do cliente.</p>
+      <div class="expertise-tags">
+        <span class="etag">Marketing</span>
+        <span class="etag">Vendas</span>
+        <span class="etag">CS</span>
+      </div>
+    </div>
+    <div class="expertise-item">
+      <div class="expertise-num">05</div>
+      <h3>Creator Economy</h3>
+      <p>Expertise nos bastidores de criadores de grande escala, estruturando operações comerciais do zero.</p>
+      <div class="expertise-tags">
+        <span class="etag">Infoprodutos</span>
+        <span class="etag">Lançamentos</span>
+        <span class="etag">SDR / Closer</span>
+      </div>
+    </div>
+    <div class="expertise-item">
+      <div class="expertise-num">06</div>
+      <h3>Mercado Corporativo</h3>
+      <p>Sólida experiência em corporações com processos estruturados, gestão de indicadores e desenvolvimento de lideranças.</p>
+      <div class="expertise-tags">
+        <span class="etag">B2B</span>
+        <span class="etag">Gestão de Pessoas</span>
+        <span class="etag">OKR</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEBSCALE -->
+<section id="webscale">
+  <div class="webscale-inner">
+    <div>
+      <p class="section-eyebrow">Sociedade & Mentoria</p>
+      <h2 class="section-title">WebScale<br/>Consultoria</h2>
+      <ul class="webscale-list">
+        <li>Sócia e Head de Receita</li>
+        <li>Construção e liderança de times de Marketing, Vendas e CS</li>
+        <li>Mentora comercial para times de consultoria</li>
+        <li>Atuo diretamente na ponta da operação</li>
+        <li>Estruturação de processos de receita do zero</li>
+      </ul>
+    </div>
+    <div>
+      <a href="https://www.instagram.com/webscale.consultoria/" target="_blank" class="webscale-card">
+        <p class="wc-eyebrow">Empresa parceira</p>
+        <h3 class="wc-name">WebScale<br/>Consultoria</h3>
+        <p class="wc-desc">Consultoria especializada em escalar operações comerciais e digitais. Atuei como sócia responsável por toda a área de receita da empresa.</p>
+        <div class="wc-handle">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          <span>@webscale.consultoria</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EMPRESAS -->
+<section id="empresas">
+  <div class="section-header">
+    <p class="section-eyebrow">Mercado Corporativo</p>
+    <h2 class="section-title">Grandes empresas<br/>onde atuei</h2>
+    <p class="section-subtitle">Experiência nas mais diversas cadeiras comerciais do mercado corporativo tradicional.</p>
+  </div>
+
+  <div class="companies-grid">
+    <a href="https://weex.digital/" target="_blank" class="company-item">
+      <div class="company-initial">W.</div>
+      <h3>Weex</h3>
+      <p class="company-role">BDR · Prospecção Outbound</p>
+      <p>Liderança em prospecção outbound como BDR no mercado financeiro digital.</p>
+    </a>
+    <a href="https://www.instagram.com/escolasetmind/" target="_blank" class="company-item">
+      <div class="company-initial">S.</div>
+      <h3>Setmind</h3>
+      <p class="company-role">Líder Comercial & Executiva</p>
+      <p>Liderança comercial e atuação como executiva de vendas em escola de desenvolvimento humano.</p>
+    </a>
+    <a href="https://wiseup.com/" target="_blank" class="company-item">
+      <div class="company-initial">W.</div>
+      <h3>WiseUp</h3>
+      <p class="company-role">Executiva de Vendas</p>
+      <p>Minha primeira formação como vendedora — uma das maiores redes de ensino de idiomas do Brasil.</p>
+    </a>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section id="resultados">
+  <div class="section-header">
+    <p class="section-eyebrow">Resultados</p>
+    <h2 class="section-title">Números que<br/>falam por si</h2>
+  </div>
+
+  <div class="results-grid">
+    <div class="result-item">
+      <div class="result-num">50+</div>
+      <div class="result-label">Pessoas gerenciadas no maior time comercial</div>
+      <div class="result-context">Creator economy</div>
+    </div>
+    <div class="result-item">
+      <div class="result-num">100+</div>
+      <div class="result-label">Vendedores formados do zero</div>
+      <div class="result-context">SDRs, Closers, Hunters</div>
+    </div>
+    <div class="result-item">
+      <div class="result-num">14M+</div>
+      <div class="result-label">Seguidores dos creators atendidos</div>
+      <div class="result-context">Audiência combinada</div>
+    </div>
+    <div class="result-item">
+      <div class="result-num">30+</div>
+      <div class="result-label">Players atendidos no mercado digital</div>
+      <div class="result-context">Creator economy</div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="section-header">
+    <p class="section-eyebrow">Depoimentos</p>
+    <h2 class="section-title">O que dizem sobre<br/>meu trabalho</h2>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-item">
+      <div class="quote-mark">"</div>
+      <p class="testimonial-text">Adicione aqui o depoimento do seu cliente ou parceiro. Quanto mais específico e com resultados concretos, mais impacto terá.</p>
+      <div class="testimonial-author-name">Nome do Depoente</div>
+      <div class="testimonial-author-role">Cargo · Empresa</div>
+    </div>
+    <div class="testimonial-item">
+      <div class="quote-mark">"</div>
+      <p class="testimonial-text">Adicione aqui o depoimento do seu cliente ou parceiro. Quanto mais específico e com resultados concretos, mais impacto terá.</p>
+      <div class="testimonial-author-name">Nome do Depoente</div>
+      <div class="testimonial-author-role">Cargo · Empresa</div>
+    </div>
+    <div class="testimonial-item">
+      <div class="quote-mark">"</div>
+      <p class="testimonial-text">Adicione aqui o depoimento do seu cliente ou parceiro. Quanto mais específico e com resultados concretos, mais impacto terá.</p>
+      <div class="testimonial-author-name">Nome do Depoente</div>
+      <div class="testimonial-author-role">Cargo · Empresa</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<div class="footer-cta">
+  <div>
+    <h2 class="footer-cta-title">Vamos construir<br/>algo grande?</h2>
+  </div>
+  <div class="footer-cta-right">
+    <p>Aberta a novas oportunidades em liderança comercial, head de receita ou mentoria de times de vendas.</p>
+    <div class="contact-links">
+      <a href="mailto:rafaelanoguerr@gmail.com" class="contact-link">
+        <span>Email</span>
+        rafaelanoguerr@gmail.com
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" class="contact-link">
+        <span>Instagram</span>
+        @rafaelanoguerr
+      </a>
+      <a href="https://www.linkedin.com/" target="_blank" class="contact-link">
+        <span>LinkedIn</span>
+        Rafaela Nogueira
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 Rafaela Nogueira · Todos os direitos reservados
+</footer>
+
+</body>
+</html>
