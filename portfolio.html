@@ -49,13 +49,123 @@
       font-size: 18px; font-weight: 700;
       color: var(--text); letter-spacing: 0.02em;
     }
-    .nav-links { display: flex; gap: 36px; }
+    .nav-links { display: flex; gap: 36px; align-items: center; }
     .nav-links a {
       font-size: 12px; font-weight: 400; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--text3);
       text-decoration: none; transition: color .2s;
     }
     .nav-links a:hover { color: var(--text); }
+    .nav-wa {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 18px;
+      background: #25D366;
+      color: #fff !important;
+      font-size: 11px !important; font-weight: 600 !important;
+      letter-spacing: 0.08em !important;
+      text-transform: uppercase; text-decoration: none;
+      border-radius: 2px; transition: opacity .2s !important;
+    }
+    .nav-wa:hover { opacity: 0.85; color: #fff !important; }
+
+    /* ── WA FLOAT BUTTON ── */
+    .wa-inline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px;
+      background: transparent;
+      border: 1px solid #25D366;
+      color: #25D366;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none;
+      transition: background .25s, color .25s;
+    }
+    .wa-inline:hover { background: #25D366; color: #fff; }
+
+    /* ── BIO ── */
+    #bio {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      min-height: 70vh;
+    }
+    .bio-photo {
+      position: relative; overflow: hidden;
+      background: var(--bg3);
+    }
+    .bio-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      filter: grayscale(100%) contrast(1.05);
+      display: block;
+    }
+    .bio-content {
+      padding: 80px 60px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .bio-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 700; line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text); margin-bottom: 28px;
+    }
+    .bio-text {
+      font-size: 15px; color: var(--text2); line-height: 1.85;
+      margin-bottom: 16px; max-width: 460px;
+    }
+    .bio-tags {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; margin-bottom: 36px;
+    }
+    .bio-tag {
+      font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent); padding: 5px 12px;
+      border: 1px solid rgba(200,184,122,0.3);
+    }
+
+    /* ── SERVIÇOS ── */
+    #servicos {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+    .servico-item {
+      background: var(--bg);
+      padding: 56px 44px;
+      position: relative;
+    }
+    .servico-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px; font-weight: 700;
+      color: var(--border2); line-height: 1;
+      margin-bottom: 24px;
+    }
+    .servico-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px; font-weight: 600;
+      color: var(--text); margin-bottom: 14px; line-height: 1.2;
+    }
+    .servico-item p {
+      font-size: 13px; color: var(--text2); line-height: 1.75;
+      margin-bottom: 28px;
+    }
+    .servico-lista { list-style: none; margin-bottom: 32px; }
+    .servico-lista li {
+      font-size: 12px; color: var(--text3); padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; gap: 10px; align-items: center;
+    }
+    .servico-lista li::before { content: '—'; color: var(--accent); flex-shrink: 0; }
+    .servicos-cta-row {
+      text-align: center; padding-top: 16px;
+    }
 
     /* ── HERO ── */
     .hero {
@@ -427,25 +537,48 @@
 
     /* ── FOOTER CTA ── */
     .footer-cta {
-      padding: 120px 60px;
       background: var(--bg);
       border-top: 1px solid var(--border);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
+      min-height: 80vh;
+    }
+    .footer-cta-photo {
+      position: relative; overflow: hidden;
+      background: var(--bg3);
+    }
+    .footer-cta-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 15%;
+      filter: grayscale(100%) contrast(1.05);
+      display: block;
+    }
+    .footer-cta-content {
+      padding: 80px 60px;
+      display: flex; flex-direction: column; justify-content: center;
     }
     .footer-cta-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(36px, 4vw, 60px);
+      font-size: clamp(32px, 3.5vw, 54px);
       font-weight: 700; line-height: 1.1;
       letter-spacing: -0.02em;
-      color: var(--text);
+      color: var(--text); margin-bottom: 24px;
     }
-    .footer-cta-right { display: flex; flex-direction: column; gap: 24px; }
-    .footer-cta-right p {
+    .footer-cta-sub {
       font-size: 15px; color: var(--text2); line-height: 1.75;
+      max-width: 420px; margin-bottom: 40px;
     }
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 32px;
+      background: #25D366;
+      color: #fff;
+      font-size: 13px; font-weight: 600; letter-spacing: 0.06em;
+      text-decoration: none; border-radius: 2px;
+      width: fit-content;
+      transition: opacity .2s;
+    }
+    .btn-whatsapp:hover { opacity: 0.88; }
     .contact-links { display: flex; flex-direction: column; gap: 12px; }
     .contact-link {
       display: flex; align-items: center; gap: 12px;
@@ -477,8 +610,14 @@
       .results-grid { grid-template-columns: repeat(2, 1fr); }
       .testimonials-grid { grid-template-columns: 1fr; }
       .webscale-inner { grid-template-columns: 1fr; gap: 40px; }
-      .footer-cta { grid-template-columns: 1fr; padding: 80px 24px; }
+      .footer-cta { grid-template-columns: 1fr; }
+      .footer-cta-photo { height: 70vw; }
+      .footer-cta-content { padding: 60px 24px; }
       .players-grid { grid-template-columns: repeat(3, 1fr); }
+      #bio { grid-template-columns: 1fr; }
+      .bio-photo { height: 80vw; }
+      .bio-content { padding: 60px 24px; }
+      .servicos-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 540px) {
       .stats-bar { grid-template-columns: repeat(2, 1fr); }
@@ -493,11 +632,15 @@
 <nav>
   <div class="nav-logo">Rafaela Nogueira</div>
   <div class="nav-links">
+    <a href="#bio">Sobre</a>
     <a href="#players">Players</a>
-    <a href="#expertise">Expertise</a>
+    <a href="#servicos">Serviços</a>
     <a href="#empresas">Empresas</a>
     <a href="#resultados">Resultados</a>
-    <a href="#depoimentos">Depoimentos</a>
+    <a href="https://wa.link/2788wd" target="_blank" class="nav-wa">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar comigo
+    </a>
   </div>
 </nav>
 
@@ -511,8 +654,11 @@
       Estruturo operações comerciais do zero — da contratação à liderança de times de alta performance. Atuo no cruzamento entre creator economy e mercado corporativo, com domínio completo de funis de venda, CRM, gestão de indicadores e desenvolvimento de pessoas.
     </p>
     <div class="hero-cta">
-      <a href="mailto:rafaelanoguerr@gmail.com" class="btn-main">Entrar em contato</a>
-      <a href="#players" class="btn-link">Ver portfólio ↓</a>
+      <a href="https://wa.link/2788wd" target="_blank" class="btn-whatsapp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar comigo
+      </a>
+      <a href="#bio" class="btn-link">Conheça meu trabalho ↓</a>
     </div>
   </div>
   <div class="hero-photo">
@@ -534,6 +680,38 @@
   <div class="stat-item">
     <div class="stat-num">100+</div>
     <div class="stat-label">Vendedores formados</div>
+  </div>
+</div>
+
+<!-- BIO -->
+<div id="bio">
+  <div class="bio-photo">
+    <img src="images/rafa-bio.jpg" alt="Rafaela Nogueira"
+         onerror="this.style.display='none'" />
+  </div>
+  <div class="bio-content">
+    <p class="section-eyebrow">Sobre mim</p>
+    <h2 class="bio-title">Sou Rafaela<br/>Nogueira</h2>
+    <p class="bio-text">
+      Head de Receita e sócia do Grupo WebScale. Especialista em estruturação comercial e vendas, com mais de 10 anos de experiência no mercado corporativo e digital.
+    </p>
+    <p class="bio-text">
+      Nos últimos anos, construí e liderei times comerciais de grandes players do mercado de saúde e fitness, com impacto direto no faturamento de operações que movimentam dezenas de milhões de reais por ano.
+    </p>
+    <p class="bio-text">
+      Integro estratégia, operação e aquisição em um único motor comercial — e hoje compartilho esse modelo com líderes e empresas que querem crescer com estrutura de verdade. Também sou estudante de Psicologia, o que me dá uma leitura única sobre comportamento humano aplicado a vendas e liderança.
+    </p>
+    <div class="bio-tags">
+      <span class="bio-tag">Vendas</span>
+      <span class="bio-tag">Liderança Comercial</span>
+      <span class="bio-tag">Creator Economy</span>
+      <span class="bio-tag">Psicologia</span>
+      <span class="bio-tag">Head de Receita</span>
+    </div>
+    <a href="https://wa.link/2788wd" target="_blank" class="wa-inline">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Conversar comigo
+    </a>
   </div>
 </div>
 
@@ -645,6 +823,15 @@
 
   </div>
 </section>
+
+<!-- WA CTA STRIP (after players) -->
+<div style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:36px 60px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+  <p style="font-family:'Playfair Display',serif;font-size:clamp(18px,2vw,26px);color:var(--text);font-weight:600;">Quer estruturar uma operação assim no seu negócio?</p>
+  <a href="https://wa.link/2788wd" target="_blank" class="btn-whatsapp" style="flex-shrink:0;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Falar comigo
+  </a>
+</div>
 
 <!-- EXPERTISE -->
 <section id="expertise">
@@ -785,8 +972,13 @@
 
   <div class="results-grid">
     <div class="result-item">
+      <div class="result-num">R$70M+</div>
+      <div class="result-label">De faturamento gerado para os clientes</div>
+      <div class="result-context">Contribuição comercial direta</div>
+    </div>
+    <div class="result-item">
       <div class="result-num">50+</div>
-      <div class="result-label">Pessoas gerenciadas no maior time comercial</div>
+      <div class="result-label">Pessoas lideradas no maior time interno</div>
       <div class="result-context">Creator economy</div>
     </div>
     <div class="result-item">
@@ -795,13 +987,8 @@
       <div class="result-context">SDRs, Closers, Hunters</div>
     </div>
     <div class="result-item">
-      <div class="result-num">14M+</div>
-      <div class="result-label">Seguidores dos creators atendidos</div>
-      <div class="result-context">Audiência combinada</div>
-    </div>
-    <div class="result-item">
       <div class="result-num">30+</div>
-      <div class="result-label">Players atendidos no mercado digital</div>
+      <div class="result-label">Operações atendidas no mercado digital</div>
       <div class="result-context">Creator economy</div>
     </div>
   </div>
@@ -836,25 +1023,95 @@
   </div>
 </section>
 
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="section-header">
+    <p class="section-eyebrow">Serviços</p>
+    <h2 class="section-title">Como posso<br/>te ajudar</h2>
+    <p class="section-subtitle">Trabalho com empresas e líderes que querem crescer com estrutura, processos e times de alta performance.</p>
+  </div>
+
+  <div class="servicos-grid">
+
+    <div class="servico-item">
+      <div class="servico-num">01</div>
+      <h3>Treinamento Comercial</h3>
+      <p>Desenvolvimento prático de times de vendas — da mentalidade à técnica. Formo SDRs, closers e hunters do zero ou elevo times que já existem.</p>
+      <ul class="servico-lista">
+        <li>Metodologia de vendas consultivas</li>
+        <li>Scripts e cadências de prospecção</li>
+        <li>Gestão de objeções e fechamento</li>
+        <li>Indicadores e metas por função</li>
+      </ul>
+      <a href="https://wa.link/2788wd" target="_blank" class="wa-inline">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Quero esse serviço
+      </a>
+    </div>
+
+    <div class="servico-item">
+      <div class="servico-num">02</div>
+      <h3>Consultoria para Lideranças</h3>
+      <p>Para líderes comerciais que precisam de clareza estratégica, gestão de people e ferramentas para escalar sem depender só de si mesmos.</p>
+      <ul class="servico-lista">
+        <li>Diagnóstico da operação comercial</li>
+        <li>Gestão de KPIs e dashboards</li>
+        <li>Desenvolvimento de líderes de vendas</li>
+        <li>Estratégia de receita integrada</li>
+      </ul>
+      <a href="https://wa.link/2788wd" target="_blank" class="wa-inline">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Quero esse serviço
+      </a>
+    </div>
+
+    <div class="servico-item">
+      <div class="servico-num">03</div>
+      <h3>Contratação e Estruturação de Times</h3>
+      <p>Do zero ao time completo. Processo de recrutamento, onboarding comercial, criação de trilhas de treinamento e estrutura de cargos e salários.</p>
+      <ul class="servico-lista">
+        <li>Perfil ideal de vendedor por operação</li>
+        <li>Processo seletivo e entrevistas técnicas</li>
+        <li>Onboarding e ramp-up estruturado</li>
+        <li>Plano de carreira e remuneração variável</li>
+      </ul>
+      <a href="https://wa.link/2788wd" target="_blank" class="wa-inline">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Quero esse serviço
+      </a>
+    </div>
+
+  </div>
+
+  <div class="servicos-cta-row">
+    <a href="https://wa.link/2788wd" target="_blank" class="btn-whatsapp" style="margin:0 auto;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Não sei por onde começar — quero conversar
+    </a>
+  </div>
+</section>
+
 <!-- FOOTER CTA -->
 <div class="footer-cta">
-  <div>
-    <h2 class="footer-cta-title">Vamos construir<br/>algo grande?</h2>
+  <div class="footer-cta-photo">
+    <img src="images/rafa-cta.jpg" alt="Rafaela Nogueira" />
   </div>
-  <div class="footer-cta-right">
-    <p>Aberta a novas oportunidades em liderança comercial, head de receita ou mentoria de times de vendas.</p>
-    <div class="contact-links">
+  <div class="footer-cta-content">
+    <p class="section-eyebrow" style="margin-bottom:20px;">Consultoria Comercial</p>
+    <h2 class="footer-cta-title">Quer o meu olhar<br/>no seu negócio?</h2>
+    <p class="footer-cta-sub">Quero te ajudar a construir o time comercial que vai escalar o seu negócio. Fala comigo e vamos entender juntos o que a sua operação precisa.</p>
+    <a href="https://wa.link/2788wd" target="_blank" class="btn-whatsapp">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar sobre consultoria
+    </a>
+    <div class="contact-links" style="margin-top:32px;">
       <a href="mailto:rafaelanoguerr@gmail.com" class="contact-link">
         <span>Email</span>
         rafaelanoguerr@gmail.com
       </a>
-      <a href="https://www.instagram.com/" target="_blank" class="contact-link">
+      <a href="https://www.instagram.com/rafaelanoguerr" target="_blank" class="contact-link">
         <span>Instagram</span>
         @rafaelanoguerr
-      </a>
-      <a href="https://www.linkedin.com/" target="_blank" class="contact-link">
-        <span>LinkedIn</span>
-        Rafaela Nogueira
       </a>
     </div>
   </div>
